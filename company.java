@@ -3,18 +3,21 @@ public class Company {
     public static void main(String[] args) {
         Employee[] employees = new Employee[5];
 
-        employees[0] = new Employee("Jan Kowalski", 50000);
-        employees[1] = new Employee("Anna Nowak", 60000);
-        employees[2] = new Employee("Piotr Lewandowski", 55000);
-        employees[3] = new Employee("Katarzyna Kowalczyk", 52000);
-        employees[4] = new Employee("Krzysztof Mazur", 58000);
+        employees[0] = new Manager("Jan Manager", 70000);
+        ((Manager) employees[0]).setNumberOfSubordinates(0);
 
-        System.out.println("Data for employee at index 3:");
-        System.out.println(employees[3]);
+        employees[1] = new Worker("Anna Worker", 45000);
+        ((Worker) employees[1]).setPosition("Assistant");
 
-        employees[3].setSalary(55000);
+        employees[2] = new Employee("Piotr Employee", 55000);
 
-        System.out.println("\nData for all employees:");
+        employees[3] = new Worker("Krzysztof Worker", 50000);
+        ((Worker) employees[3]).setPosition("Technician");
+
+        employees[4] = new Worker("Katarzyna Worker", 48000);
+        ((Worker) employees[4]).setPosition("Clerk");
+
+        System.out.println("Data for all employees:");
         for (Employee emp : employees) {
             System.out.println(emp);
         }
